@@ -1,9 +1,15 @@
 package es.softord.pruebaAnnotation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("ComercialExperimentado")
+@Component
 public class ComercialExperimentado implements Empleados {
+	
+	@Autowired
+	public ComercialExperimentado(CreacionInformeFinanciero nuevoInformeFinanciero) {
+		this.nuevoInformeFinanciero = nuevoInformeFinanciero;
+	}
 
 	@Override
 	public String getTareas() {
@@ -14,7 +20,12 @@ public class ComercialExperimentado implements Empleados {
 	@Override
 	public String getInformes() {
 		// TODO Auto-generated method stub
-		return "Informe generado por el Comercial";
+		//return "Informe generado por el Comercial";
+		
+		return nuevoInformeFinanciero.getInformeFinanciero();
 	}
+	
+	//Crear objeto de la interfaz
+	private CreacionInformeFinanciero nuevoInformeFinanciero;
 
 }
