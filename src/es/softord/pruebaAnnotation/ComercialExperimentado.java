@@ -1,6 +1,7 @@
 package es.softord.pruebaAnnotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -36,6 +37,7 @@ public class ComercialExperimentado implements Empleados {
 	
 	//Crear objeto de la interfaz
 	@Autowired
+	@Qualifier("informeFinancieroTrim4") //Bean que debe utilizar
 	private CreacionInformeFinanciero nuevoInformeFinanciero;
 
 }
