@@ -2,10 +2,24 @@ package es.softord.pruebaAnnotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component  //@Scope("singleton")
 public class ComercialExperimentado implements Empleados {
+	
+	//Ejecución de código despues de creación de Bean
+	@Bean(initMethod ="init")
+	public void ejecutaDespuesCreacion() {
+		System.out.println("Ejecutado tras creación del Bean");
+	}
+	
+	//Ejecución de código despues de apagado contenedor Bean
+	@Bean(destroyMethod="destroy")
+	public void ejecutaAntesDestruccion() {
+		System.out.println("Ejecutando antes de la destrucción");
+	}
 	
 	public ComercialExperimentado() {
 	
