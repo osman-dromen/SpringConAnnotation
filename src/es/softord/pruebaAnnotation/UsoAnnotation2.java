@@ -1,5 +1,6 @@
 package es.softord.pruebaAnnotation;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UsoAnnotation2 {
@@ -8,7 +9,9 @@ public class UsoAnnotation2 {
 		// TODO Auto-generated method stub
 		
 		//Leer y cargar el XML
-		ClassPathXmlApplicationContext contexto=new ClassPathXmlApplicationContext("applicationContext.xml");
+		//ClassPathXmlApplicationContext contexto=new ClassPathXmlApplicationContext("applicationContext.xml");
+		//Leer el class de configuración
+		AnnotationConfigApplicationContext contexto=new AnnotationConfigApplicationContext(EmpleadosConfig.class);
 					
 		//Pedir un Bean
 		Empleados Antonio=contexto.getBean("comercialExperimentado",Empleados.class);
