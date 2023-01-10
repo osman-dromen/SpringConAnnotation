@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class ComercialExperimentado implements Empleados {
 	
 	//Ejecución de código despues de creación de Bean
-	@Bean(initMethod ="init")
+	/*@Bean(initMethod ="init")
 	public void ejecutaDespuesCreacion() {
 		System.out.println("Ejecutado tras creación del Bean");
 	}
@@ -19,7 +19,7 @@ public class ComercialExperimentado implements Empleados {
 	@Bean(destroyMethod="destroy")
 	public void ejecutaAntesDestruccion() {
 		System.out.println("Ejecutando antes de la destrucción");
-	}
+	}*/
 	
 	public ComercialExperimentado() {
 	

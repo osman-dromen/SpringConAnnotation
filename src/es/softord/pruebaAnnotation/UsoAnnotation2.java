@@ -1,7 +1,7 @@
 package es.softord.pruebaAnnotation;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+//import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UsoAnnotation2 {
 
@@ -14,7 +14,7 @@ public class UsoAnnotation2 {
 		AnnotationConfigApplicationContext contexto=new AnnotationConfigApplicationContext(EmpleadosConfig.class);
 					
 		//Pedir un Bean
-		Empleados Antonio=contexto.getBean("comercialExperimentado",Empleados.class);
+		/*Empleados Antonio=contexto.getBean("comercialExperimentado",Empleados.class);
 		Empleados Lucia=contexto.getBean("comercialExperimentado",Empleados.class);
 						
 		//Usar el Bean
@@ -28,7 +28,13 @@ public class UsoAnnotation2 {
 			System.out.println("No apuntan al mismo lugar de memoria");			
 			System.out.println(Antonio+"\n"+Lucia);
 		}
-						
+		*/
+		//Pedir un bean al contenedor
+		Empleados empleado=contexto.getBean("directorFinanciero",Empleados.class);
+		
+		System.out.println(empleado.getTareas());
+		System.out.println(empleado.getInformes());
+		
 		//Cerrar el Contexto
 		contexto.close();
 
