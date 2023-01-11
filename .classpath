@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
@@ -69,13 +69,5 @@
 	<classpathentry kind="lib" path="libs/spring-websocket-5.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-websocket-5.2.9.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="libs/spring-websocket-5.2.9.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/ProyectoSpring1/libs/spring-context-5.2.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="libs/Generated.java"/>
-	<classpathentry kind="lib" path="libs/ManagedBean.java"/>
-	<classpathentry kind="lib" path="libs/PostConstruct.java"/>
-	<classpathentry kind="lib" path="libs/PreDestroy.java"/>
-	<classpathentry kind="lib" path="libs/Priority.java"/>
-	<classpathentry kind="lib" path="libs/Resource.java"/>
-	<classpathentry kind="lib" path="libs/Resources.java"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,5 +1,7 @@
 package es.softord.pruebaAnnotation;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -7,34 +9,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component  //@Scope("singleton")
-public class ComercialExperimentado implements Empleados {
-	
-	//Ejecución de código despues de creación de Bean
-	/*@Bean(initMethod ="init")
-	public void ejecutaDespuesCreacion() {
-		System.out.println("Ejecutado tras creación del Bean");
-	}
-	
-	//Ejecución de código despues de apagado contenedor Bean
-	@Bean(destroyMethod="destroy")
-	public void ejecutaAntesDestruccion() {
-		System.out.println("Ejecutando antes de la destrucción");
-	}*/
-	
-	public ComercialExperimentado() {
-	
-	}
+public class ComercialExperimentado implements Empleados, InitializingBean, DisposableBean {
 	
 	/*@Autowired //Inyección con constructor
 	public ComercialExperimentado(CreacionInformeFinanciero nuevoInformeFinanciero) {
 		this.nuevoInformeFinanciero = nuevoInformeFinanciero;
-	}*/
+	}
 	
-	/*@Autowired
+	@Autowired //Inyección con un settter
 	public void setQueMasDaElNombre(CreacionInformeFinanciero nuevoInformeFinanciero) {
 		this.nuevoInformeFinanciero=nuevoInformeFinanciero;
-	}*/
-
+	}
+	*/
 	@Override
 	public String getTareas() {
 		// TODO Auto-generated method stub
@@ -47,6 +33,19 @@ public class ComercialExperimentado implements Empleados {
 		//return "Informe generado por el Comercial";
 		
 		return nuevoInformeFinanciero.getInformeFinanciero();
+	}
+	
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("Ejecutando tras la creación del Bean");
+		
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("Ejecutando antes de la destrucción del Bean");
 	}
 	
 	//Crear objeto de la interfaz
